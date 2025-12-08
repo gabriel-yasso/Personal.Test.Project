@@ -10,8 +10,7 @@ namespace Personal.Test.Project.Web.Pages.Todos
     public class IndexModel : ProjectPageModel
     {
         public List<TodoItemDto> TodoItems { get; set; }
-        [BindProperty]
-        public string Text { get; set; }
+        
         private readonly ITodoAppService _todoAppService;
         public IndexModel(ITodoAppService todoAppService)
         {

@@ -62,7 +62,16 @@ public class ProjectMenuContributor : IMenuContributor
                 ProjectMenus.Todo,
                 l["Menu:Todos"],
                 "/Todos",
-                icon: "fa fa-book"
+                icon: "fa-solid fa-clipboard-list"
+            )
+        );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                ProjectMenus.Notes,
+                l["Menu:Notes"],
+                "/Notes",
+                icon: "fa-solid fa-note-sticky"
             )
         );
 

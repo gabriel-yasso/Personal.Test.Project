@@ -1,0 +1,29 @@
+﻿@page
+@model Personal.Test.Project.Web.Pages.Notes.IndexModel
+@{
+}
+
+<h1 class="">Notes</h1>
+
+<form method="post" class="d-flex justify-content-between align-items-center">
+    <div class="form-group flex-grow-1">
+        <input type="text" class="form-control" name="newNote" placeholder="new note ..."/> 
+    </div>
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> Add Note
+    </button>
+</form>
+
+<ul class="list-group mt-2">
+    @foreach (var note in Model.Notes)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="fw-semibold">@note.Text</span>
+            <form method="post" asp-page-handler="delete" asp-route-id="@note.Id" class="m-0">
+                <button type="submit" class="btn btn-sm btn-outline-danger">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+            </form>
+        </li>
+    }
+</ul>

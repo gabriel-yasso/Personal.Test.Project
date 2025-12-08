@@ -7,4 +7,6 @@ public class ProjectMenus
     public const string Home = Prefix + ".Home";
 
     public const string Todo = Prefix + ".Todo";
+
+    public const string Notes = Prefix + ".Notes";
 }

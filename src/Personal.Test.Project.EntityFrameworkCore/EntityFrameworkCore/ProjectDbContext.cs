@@ -27,6 +27,7 @@ public class ProjectDbContext :
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
     public DbSet<TodoItem> TodoItems { get; set; }
+    public DbSet<Note> Notes { get; set; }
 
 
     #region Entities from the modules
@@ -92,6 +93,12 @@ public class ProjectDbContext :
         builder.Entity<TodoItem>(b =>
         {
             b.ToTable(ProjectConsts.DbTablePrefix + "TodoItems", ProjectConsts.DbSchema);
+            b.ConfigureByConvention();
+        });
+
+        builder.Entity<Note>(b =>
+        {
+            b.ToTable(ProjectConsts.DbTablePrefix + "Notes", ProjectConsts.DbSchema);
             b.ConfigureByConvention();
         });
     }

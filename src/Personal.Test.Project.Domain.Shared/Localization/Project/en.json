@@ -3,7 +3,8 @@
   "Texts": {
     "AppName": "Project",
     "Menu:Home": "Home",
-    "Menu:Todos": "Todos",  
+    "Menu:Todos": "Todos", 
+    "Menu:Notes": "Notes",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
     "Welcome": "Welcome"
   }

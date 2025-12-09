@@ -75,5 +75,14 @@ public class ProjectMenuContributor : IMenuContributor
             )
         );
 
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                ProjectMenus.PersonalTasks,
+                l["Menu:PersonalTasks"],
+                "/PersonalTasks",
+                icon: "fa-solid fa-list-check"
+            )
+        );
+
     }
 }

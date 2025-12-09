@@ -9,4 +9,6 @@ public class ProjectMenus
     public const string Todo = Prefix + ".Todo";
 
     public const string Notes = Prefix + ".Notes";
+
+    public const string PersonalTasks = Prefix + ".PersonalTasks";
 }

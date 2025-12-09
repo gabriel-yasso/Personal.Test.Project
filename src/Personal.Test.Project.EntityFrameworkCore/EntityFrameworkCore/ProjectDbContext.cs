@@ -14,6 +14,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Personal.Test.Project.PersonalTasks;
 
 namespace Personal.Test.Project.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ public class ProjectDbContext :
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
     public DbSet<TodoItem> TodoItems { get; set; }
     public DbSet<Note> Notes { get; set; }
+    public DbSet<PersonalTask> PersonalTasks { get; set; }
 
 
     #region Entities from the modules
@@ -99,6 +101,11 @@ public class ProjectDbContext :
         builder.Entity<Note>(b =>
         {
             b.ToTable(ProjectConsts.DbTablePrefix + "Notes", ProjectConsts.DbSchema);
+            b.ConfigureByConvention();
+        });
+        builder.Entity<PersonalTask>(b =>
+        {
+            b.ToTable(ProjectConsts.DbTablePrefix + "PersonalTasks" + ProjectConsts.DbSchema);
             b.ConfigureByConvention();
         });
     }

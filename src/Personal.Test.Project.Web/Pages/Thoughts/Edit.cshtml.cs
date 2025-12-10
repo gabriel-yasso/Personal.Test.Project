@@ -5,6 +5,7 @@ using Personal.Test.Project.Thoughts.Dtos;
 using Personal.Test.Project.Web.Pages.Thoughts.ViewModels;
 using System;
 using System.Threading.Tasks;
+using Volo.Abp.ObjectMapping;
 
 namespace Personal.Test.Project.Web.Pages.Thoughts
 {
@@ -24,9 +25,7 @@ namespace Personal.Test.Project.Web.Pages.Thoughts
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            var Thought = await _service.GetAsync(Id);
-            var Dto = ObjectMapper.Map<ThoughtDto, UpdateThoughtDto>(Thought);
-            ObjectMapper.Map(ViewModel, Dto);
+            var Dto = ObjectMapper.Map<EditThoughtViewModel, UpdateThoughtDto>(ViewModel);
             await _service.UpdateAsync(Id, Dto);
 
             return RedirectToPage("/Thoughts/Index");

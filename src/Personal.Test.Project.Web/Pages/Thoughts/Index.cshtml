@@ -1,0 +1,45 @@
+﻿@page
+@model Personal.Test.Project.Web.Pages.Thoughts.IndexModel
+@{
+}
+
+<h1>Thoughts</h1>
+
+<form method="post" class="mb-4">
+    <div class="mb-3">
+        <label asp-for="ViewModel.Title" class="form-label"></label>
+        <input type="text" asp-for="ViewModel.Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="ViewModel.Content" class="form-label"></label>
+        <textarea asp-for="ViewModel.Content" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Thought</button>
+</form>
+
+<ul class="list-group">
+    @foreach (var thought in Model.Thoughts)
+    {
+        <li class="list-group-item d-flex justify-content-between">
+            <div>
+                <h5 class="mb-1">@thought.Title</h5>
+                <p class="mb-1">@thought.Content</p>
+            </div>
+            <div class="d-flex gap-2 ms-3 align-items-center">
+                <form method="post" asp-page-handler="delete">
+                    <input type="hidden" asp-for="Id" value="@thought.Id" />
+                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                        Delete
+                    </button>
+                </form>
+                <a asp-page="/Thoughts/Details" asp-route-id="@thought.Id" class="btn btn-primary btn-sm">
+                    Details
+                </a>
+                <a asp-page="/Thoughts/Edit" asp-route-id="@thought.Id" class="btn btn-secondary btn-sm">
+                    Edit
+                </a>
+            </div>
+
+        </li>
+    }
+</ul>

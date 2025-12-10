@@ -84,5 +84,14 @@ public class ProjectMenuContributor : IMenuContributor
             )
         );
 
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                ProjectMenus.Thoughts,
+                l["Menu:Thoughts"],
+                "/Thoughts",
+                icon: "fa-regular fa-lightbulb"
+            )
+        );
+
     }
 }

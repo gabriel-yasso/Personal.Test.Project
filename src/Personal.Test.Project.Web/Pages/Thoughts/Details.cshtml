@@ -1,0 +1,17 @@
+﻿@page "{id:guid}"
+@model Personal.Test.Project.Web.Pages.Thoughts.DetailsModel
+@{
+}
+<div class="container mt-4">
+    <div class="card shadow-sm rounded">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">@Model.Thought.Title</h4>
+        </div>
+        <div class="card-body">
+            <p class="card-text lead">@Model.Thought.Content</p>
+            <a asp-page="/Thoughts/Index" class="btn btn-outline-secondary btn-sm">
+                ← Back to List
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@page "{id:guid}"
+@model Personal.Test.Project.Web.Pages.Thoughts.EditModel
+@{
+}
+
+<h1>Edit Thought</h1>
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="ViewModel.Title" class="form-label"></label>
+        <input type="text" asp-for="ViewModel.Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="ViewModel.Content" class="form-label"></label>
+        <textarea asp-for="ViewModel.Content" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

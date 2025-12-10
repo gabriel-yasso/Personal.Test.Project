@@ -11,4 +11,6 @@ public class ProjectMenus
     public const string Notes = Prefix + ".Notes";
 
     public const string PersonalTasks = Prefix + ".PersonalTasks";
+
+    public const string Thoughts = Prefix + ".Thoughts";
 }

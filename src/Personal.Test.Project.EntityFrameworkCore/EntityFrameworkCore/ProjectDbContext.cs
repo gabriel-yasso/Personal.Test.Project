@@ -15,6 +15,7 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Personal.Test.Project.PersonalTasks;
+using Personal.Test.Project.Thoughts;
 
 namespace Personal.Test.Project.EntityFrameworkCore;
 
@@ -30,6 +31,7 @@ public class ProjectDbContext :
     public DbSet<TodoItem> TodoItems { get; set; }
     public DbSet<Note> Notes { get; set; }
     public DbSet<PersonalTask> PersonalTasks { get; set; }
+    public DbSet<Thought> Thoughts { get; set; }
 
 
     #region Entities from the modules
@@ -103,10 +105,18 @@ public class ProjectDbContext :
             b.ToTable(ProjectConsts.DbTablePrefix + "Notes", ProjectConsts.DbSchema);
             b.ConfigureByConvention();
         });
+
         builder.Entity<PersonalTask>(b =>
         {
             b.ToTable(ProjectConsts.DbTablePrefix + "PersonalTasks" + ProjectConsts.DbSchema);
             b.ConfigureByConvention();
         });
+
+        builder.Entity<Thought>(b =>
+        {
+            b.ToTable(ProjectConsts.DbTablePrefix + "Thoughts", ProjectConsts.DbSchema);
+            b.ConfigureByConvention();
+        });
+
     }
 }

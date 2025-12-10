@@ -1,5 +1,4 @@
-﻿using Personal.Test.Project.PersonalTasks;
-using Personal.Test.Project.PersonalTasks.Dtos;
+﻿using Personal.Test.Project.PersonalTasks.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
-namespace Personal.Test.Project
+namespace Personal.Test.Project.PersonalTasks
 {
     public class PersonalTaskAppService : ApplicationService, IPersonalTaskAppService
     {
